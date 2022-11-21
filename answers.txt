@@ -1,4 +1,4 @@
-1-
+Question 1: 
 SELECT customer_name FROM customer WHERE customer_name LIKE 'Ma%';
 -------------------------------------------------------------------
 Mara Hudson
@@ -10,7 +10,7 @@ Madonna Foreman
 Marvin Rich
 Macy Holman
 
-2-
+Question 2: 
 SELECT COUNT(*) FROM item;
 SELECT order_item.order_id,SUM(order_item.quantity*item.unit_price) AS TotalPrice FROM order_item
 JOIN item ON order_item.item_id = item.item_id
@@ -166,7 +166,7 @@ order_id	TotalPrice
 199	156517	
 200	20545	
 
-3-
+Question 3: 
 SELECT shipment.order_id,warehouse.warehouse_city
 FROM shipment JOIN warehouse 
 ON shipment.warehouse_id = warehouse.warehouse_id 
@@ -181,7 +181,7 @@ order_id	warehouse_city
 182	Arica	
 183	Arica	
 
-4-
+Question 4: 
 SELECT order_item.order_id,shipment.warehouse_id,SUM(order_item.quantity*item.unit_price) AS TotalPrice FROM order_item
 JOIN item ON order_item.item_id = item.item_id
 JOIN shipment ON order_item.order_id = shipment.order_id WHERE shipment.warehouse_id=8
@@ -194,7 +194,7 @@ order_id	warehouse_id	TotalPrice
 90	8	489824	
 123	8	2510	
 
-5-
+Question 5: 
 SELECT warehouse.warehouse_id,warehouse.warehouse_city,COUNT(shipment.order_id) AS TotalOrders FROM warehouse
 LEFT JOIN shipment ON warehouse.warehouse_id = shipment.warehouse_id
 GROUP BY shipment.warehouse_id
@@ -260,7 +260,7 @@ warehouse_id   	warehouse_city	TotalOrders
 59	Whitby	5	
 60	Shipshaw	6	
 
-6-
+Question 6: 
 SELECT customer.customer_name,COUNT(processing_order.order_id) AS TotalOrders FROM customer
 LEFT JOIN processing_order ON processing_order.customer_id = customer.customer_id
 GROUP BY customer.customer_name
@@ -368,7 +368,7 @@ Yoshio Poole	0
 Zachery Pace	2	
 Zelda Love	2	
 
-7-
+Question 7: 
 SELECT item.item_id,item.unit_price FROM item
 LEFT JOIN order_item ON order_item.item_id = item.item_id
 GROUP BY item.item_id
