@@ -1,4 +1,4 @@
-CREATE DATABASE lab4;
+CREATE DATABASE order_processing_system;
 CREATE TABLE customer
 (
     customer_id         INT              NOT NULL        AUTO_INCREMENT,
