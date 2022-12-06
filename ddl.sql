@@ -6,7 +6,7 @@ CREATE TABLE customer
     city                VARCHAR(30)      NOT NULL,
     PRIMARY KEY(customer_id)
 );
-CREATE TABLE `order`
+CREATE TABLE processing_order
 (
     order_id            INT              NOT NULL       AUTO_INCREMENT,
     order_date          datetime         NOT NULL,
